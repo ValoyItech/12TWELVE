@@ -10,10 +10,21 @@
 <link rel="icon" type="image/png" href="images/logo.png">
 <link rel="apple-touch-icon" href="images/logo.png">
 
+<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="About 12TWELVE Gel Nails">
-<meta property="og:description" content="Discover the story and vision behind 12TWELVE Gel Nails.">
-<meta property="og:image" content="images/logo.png">
+<meta property="og:title" content="About Us | 12TWELVE Gel Nails">
+<meta property="og:description" content="Learn more about 12TWELVE Gel Nails — a luxury gel nail studio in Pretoria East, focused on quality, care, and elegant nail artistry.">
+<meta property="og:url" content="https://www.12twelvesalon.co.za/about">
+<meta property="og:image" content="https://www.12twelvesalon.co.za/images/hero5.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us | 12TWELVE Gel Nails">
+<meta name="twitter:description" content="Discover the story behind 12TWELVE Gel Nails and our passion for luxury nail care.">
+<meta name="twitter:image" content="https://www.12twelvesalon.co.za/images/hero5.jpg">
+
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -715,5 +726,48 @@
     initScrollAnimations();
     onConfigChange(defaultConfig);
   </script>
+
+  <!-- WhatsApp Floating Button -->
+<a
+  href="https://wa.me/27671411995?text=Hi%2012TWELVE%20Gel%20Nails%2C%20I%27d%20like%20to%20book%20an%20appointment."
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-float group fixed bottom-6 right-6 z-[60] flex items-center gap-3"
+  aria-label="Chat with us on WhatsApp"
+>
+  <!-- Label -->
+  <span
+    class="hidden sm:inline-flex items-center rounded-full bg-white/90 backdrop-blur px-4 py-2 text-sm font-semibold text-[#4A4A4A]
+           shadow-lg border border-[#FFB6C1]/30 group-hover:shadow-xl transition"
+  >
+    Chat Now
+  </span>
+
+  <!-- Icon Button -->
+  <span class="relative inline-flex">
+    <!-- Pulse ring -->
+    <span class="wa-ring absolute inset-0 rounded-full"></span>
+
+    <span
+      class="inline-flex h-14 w-14 items-center justify-center rounded-full text-white shadow-xl
+             bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0]
+             ring-2 ring-white/70 group-hover:scale-105 transition"
+    >
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </span>
+  </span>
+</a>
+
+<style>
+  .wa-ring{
+    animation: waPulse 1.6s ease-out infinite;
+    box-shadow: 0 0 0 0 rgba(255, 182, 193, 0.55);
+  }
+  @keyframes waPulse{
+    0%   { transform: scale(1);   opacity: 1; box-shadow: 0 0 0 0 rgba(255, 182, 193, 0.55); }
+    100% { transform: scale(1.6); opacity: 0; box-shadow: 0 0 0 18px rgba(255, 182, 193, 0); }
+  }
+</style>
+
  </body>
 </html>
