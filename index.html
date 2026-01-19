@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12TWELVE Gel Nails & Spa | Luxury Nail Salon</title>
+
+<meta name="description" content="Luxury gel nails, nail art and spa treatments at 12TWELVE Gel Nails & Spa in Pretoria East. Book your appointment today.">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="12TWELVE Gel Nails & Spa">
+<meta property="og:description" content="Luxury gel nails, nail art and spa treatments in Pretoria East.">
+<meta property="og:image" content="images/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="12TWELVE Gel Nails & Spa">
+<meta name="twitter:description" content="Luxury gel nails and spa treatments in Pretoria East.">
+<meta name="twitter:image" content="images/logo.png">
+
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    
+    /* Hero Slideshow */
+    .hero-slide {
+      animation: fadeSlide 0.8s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.8s ease-in-out;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    /* Hero Content Animations */
+    .hero-tagline {
+      animation: slideInDown 1s ease-out 0.2s both;
+    }
+    .hero-title {
+      animation: fadeInUp 1.2s ease-out 0.4s both;
+    }
+    .hero-subtitle {
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+    .hero-cta {
+      animation: bounceIn 1s ease-out 0.8s both;
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      background: rgba(255, 182, 193, 0.3);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float linear infinite;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100%) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100%) translateX(50px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    /* Shine effect */
+    .hero-content::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      animation: shine 3s ease-in-out infinite;
+    }
+    
+    @keyframes shine {
+      0%, 100% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+      50% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+    }
+    
+    /* Text glow effect */
+    .glow-text {
+      text-shadow: 0 0 20px rgba(255, 182, 193, 0.5), 
+                   0 0 40px rgba(255, 182, 193, 0.3);
+    }
+    
+    /* Scroll Animations */
+    .scroll-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .scroll-fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-fade-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.6s ease-out;
+    }
+    .scroll-fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .scroll-fade-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.6s ease-out;
+    }
+    .scroll-fade-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .scroll-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s ease-out;
+    }
+    .scroll-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+    
+    /* Service Cards */
+    .service-card {
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+    }
+    .service-card img {
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Category Tabs */
+    .category-btn {
+      transition: all 0.3s ease;
+    }
+    .category-btn.active {
+      background: linear-gradient(135deg, #FFB6C1 0%, #FFC1D0 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+    }
+    
+    /* Modal */
+    .booking-modal {
+      animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    /* Team Cards */
+    .team-card {
+      transition: all 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 182, 193, 0.25);
+    }
+    .team-card img {
+      transition: transform 0.4s ease;
+    }
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Hours Grid */
+    .hours-row {
+      border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+    }
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+    
+    /* Social Icons */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Service Image Gradients */
+    .service-image {
+      background: linear-gradient(135deg, #FFB6C1 0%, #E6E6FA 50%, #FFFFFF 100%);
+    }
+    
+    :root {
+      --pink: #FFB6C1;
+      --grey: #D3D3D3;
+      --white: #FFFFFF;
+      --dark-grey: #8B8B8B;
+      --text: #4A4A4A;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-poppins bg-white text-[#4A4A4A]">
+  <div id="app" class="h-full w-full overflow-auto"><!-- Sticky Header -->
+   <header class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50 border-b border-[#FFB6C1]/20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+     <div class="flex items-center gap-3">
+      <div class="w-14 h-14 flex items-center justify-center">
+  <img
+    src="images/logo.png"
+    alt="12TWELVE Gel Nails & Spa Logo"
+    class="w-full h-full object-contain"
+  >
+</div>
+
+      <div>
+       <h1 id="header-name" class="font-cormorant text-2xl font-bold text-[#FFB6C1]">12TWELVE</h1>
+       <p class="text-xs text-[#8B8B8B]">Gel Nails &amp; Spa</p>
+      </div>
+     </div>
+     <nav class="hidden md:flex items-center gap-6"><a href="index.html" class="text-sm hover:text-[#FFB6C1] transition-colors">Home</a> <a href="#services" class="text-sm hover:text-[#FFB6C1] transition-colors">Services</a> <a href="about.html" class="text-sm hover:text-[#FFB6C1] transition-colors">About</a> <a href="gallery.html" class="text-sm hover:text-[#FFB6C1] transition-colors">Gallery</a> <a href="#team" class="text-sm hover:text-[#FFB6C1] transition-colors">Team</a> <a href="contact.html" class="text-sm hover:text-[#FFB6C1] transition-colors">Contact</a> <a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg transition-all">Book Now</a>
+     </nav><button onclick="toggleMobileMenu()" class="md:hidden text-[#FFB6C1]">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg></button>
+    </div>
+   </header><!-- Mobile Sidebar Menu -->
+   <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden" onclick="toggleMobileMenu()"></div>
+   <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 overflow-auto">
+    <div class="p-6">
+     <div class="flex justify-between items-center mb-8">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 flex items-center justify-center">
+  <img
+    src="images/logo.png"
+    alt="12TWELVE Gel Nails & Spa Logo"
+    class="w-full h-full object-contain"
+  >
+</div>
+
+       <div><span class="font-cormorant text-xl font-bold text-[#FFB6C1]">TWELVE</span>
+        <p class="text-xs text-gray-500">Menu</p>
+       </div>
+      </div><button onclick="toggleMobileMenu()" class="text-gray-400 hover:text-gray-600">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+       </svg></button>
+     </div>
+     <nav class="flex flex-col gap-1"><a href="index.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()"> <i class="fas fa-home w-6"></i> Home </a> <a href="#services" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()"> <i class="fas fa-spa w-6"></i> Services </a> <a href="about.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()"> <i class="fas fa-info-circle w-6"></i> About Us </a> <a href="gallery.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()"> <i class="fas fa-images w-6"></i> Gallery </a> <a href="#team" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()"> <i class="fas fa-users w-6"></i> Our Team </a> <a href="contact.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()"> <i class="fas fa-envelope w-6"></i> Contact </a>
+      <div class="border-t border-gray-200 my-4"></div><a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white px-6 py-4 rounded-full text-base font-semibold text-center hover:shadow-xl transition-all mt-4"> <i class="fas fa-calendar-check"></i> Book Appointment </a>
+     </nav>
+     <div class="mt-8 pt-6 border-t border-gray-200">
+      <p class="text-sm text-gray-500 mb-3">Follow Us</p>
+      <div class="flex gap-3"><a href="https://www.tiktok.com/@12twelvegelnails" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors"> <i class="fab fa-tiktok"></i> </a> <a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors"> <i class="fas fa-calendar-check"></i> </a>
+      </div>
+     </div>
+    </div>
+   </div><!-- Hero Slideshow -->
+   <section class="relative h-screen overflow-hidden">
+    <div id="hero-slideshow" class="absolute inset-0"><!-- Slides will be generated dynamically -->
+    </div><!-- Floating particles -->
+    <div id="particles-container" class="absolute inset-0 overflow-hidden pointer-events-none"><!-- Particles will be generated dynamically -->
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+    <div class="relative h-full flex items-center justify-center px-6">
+     <div id="hero-content" class="hero-content text-center text-white max-w-4xl relative z-10">
+      <p id="hero-tagline" class="hero-tagline text-[#FFB6C1] text-sm tracking-[0.3em] mb-4 font-light glow-text">LUXURY GEL NAILS &amp; SPA</p>
+      <h2 id="hero-title" class="hero-title font-cormorant text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">Beautiful Gel Nails</h2>
+      <p id="hero-subtitle" class="hero-subtitle text-lg md:text-xl mb-8 text-gray-200 font-light">Expert nail artistry at your fingertips</p><a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="hero-cta inline-block bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white px-10 py-4 rounded-full font-medium hover:shadow-2xl transition-all hover:scale-105 text-lg"> Book Your Appointment </a>
+     </div>
+    </div><!-- Slide Indicators -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-20"><button onclick="goToSlide(0)" class="slide-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="0"></button> <button onclick="goToSlide(1)" class="slide-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="1"></button> <button onclick="goToSlide(2)" class="slide-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="2"></button> <button onclick="goToSlide(3)" class="slide-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="3"></button> <button onclick="goToSlide(4)" class="slide-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="4"></button>
+    </div>
+   </section><!-- Services Section -->
+   <section id="services" class="py-20 px-6 bg-gradient-to-br from-[#FFB6C1]/20 via-[#D3D3D3]/15 to-[#FFB6C1]/25">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">WHAT WE OFFER</p>
+      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Our Services</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto">Discover our range of professional beauty services designed to make you look and feel your best</p>
+     </div><!-- Category Tabs -->
+     <div class="flex flex-wrap justify-center gap-3 mb-12"><button onclick="filterCategory('featured')" class="category-btn active px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="featured">Featured</button> <button onclick="filterCategory('hair')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="hair">Hair</button> <button onclick="filterCategory('eyelashes')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="eyelashes">Eyelashes</button> <button onclick="filterCategory('nails')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="nails">Nails</button> <button onclick="filterCategory('eyebrows')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="eyebrows">Eyebrows</button>
+     </div><!-- Services Grid -->
+     <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Services will be rendered here -->
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-24 px-6 bg-white border-t-8 border-[#FFB6C1]">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+     <div class="scroll-fade-left">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">ABOUT US</p>
+      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-6">Your Beauty Destination</h3>
+      <p id="about-text" class="text-gray-600 leading-relaxed mb-6">12TWELVE PTY (LTD) is a gel nail salon and spa located in Willow Park Manor, Pretoria East. Since its establishment on December 1st, 2021, the salon has been dedicated to offering a range of beauty services in a peaceful, welcoming space. Founded by Xitshembiso, born on the 12th of December, each visit is crafted with care and attention.</p>
+      <p class="text-gray-600 leading-relaxed mb-8">While it currently has one location, there are exciting plans for more to come in the future.</p>
+      <div class="grid grid-cols-3 gap-6">
+       <div class="text-center scroll-scale stagger-1">
+        <div class="text-[#FFB6C1] text-4xl font-bold font-cormorant mb-2">
+         30+
+        </div>
+        <div class="text-sm text-gray-500">
+         Services
+        </div>
+       </div>
+       <div class="text-center scroll-scale stagger-2">
+        <div class="text-[#FFB6C1] text-4xl font-bold font-cormorant mb-2">
+         3+
+        </div>
+        <div class="text-sm text-gray-500">
+         Years
+        </div>
+       </div>
+       <div class="text-center scroll-scale stagger-3">
+        <div class="text-[#FFB6C1] text-4xl font-bold font-cormorant mb-2">
+         100%
+        </div>
+        <div class="text-sm text-gray-500">
+         Quality
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20 rounded-3xl p-8 scroll-fade-right">
+      <h4 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6">Opening Hours</h4>
+      <div class="space-y-4">
+       <div class="hours-row flex justify-between py-4"><span class="font-medium">Monday</span> <span class="text-gray-500">Closed</span>
+       </div>
+       <div class="hours-row flex justify-between py-4"><span class="font-medium">Tuesday - Sunday</span> <span class="text-[#FFB6C1] font-bold text-lg">09:00 - 20:00</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+
+<section id="team" class="py-24 px-6 bg-gradient-to-br from-[#FFB6C1]/40 via-[#FFC1D0]/30 to-[#D3D3D3]/35 border-t-8 border-[#D3D3D3]">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">OUR TEAM</p>
+      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Meet Our Experts</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Our talented team is dedicated to bringing out your natural beauty
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+
+      <!-- Founder FIRST -->
+      <div class="team-card bg-white rounded-3xl overflow-hidden shadow-lg text-center">
+        <div class="h-64 overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20">
+          <img src="images/founder.png" alt="Xitshembiso" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h4 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-2">
+            Xitshembiso Shibiti
+          </h4>
+          <p class="text-[#FFB6C1] mb-3 font-medium">
+            CEO &amp; Founder | Gel Overlay &amp; Extension Nail-Tech
+          </p>
+
+          <div class="text-left bg-gradient-to-br from-[#FFB6C1]/5 to-[#D3D3D3]/5 rounded-2xl p-4 mt-4">
+            <h5 class="font-semibold text-[#4A4A4A] mb-2 text-sm">About Me</h5>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              My name is Xitshembiso Shibiti, the CEO &amp; Founder of 12TWELVE PTY (LTD).
+              I established the salon on December 1st, 2021, driven by a deep passion
+              for nail artistry, self-care, and creating a space where clients feel
+              confident, relaxed, and valued.
+              <br><br>
+              With professional training in gel overlays and nail extensions, I pride
+              myself on precision, hygiene, and creativity. My mission is to deliver
+              high-quality beauty services while building long-lasting relationships
+              with clients through trust, consistency, and exceptional service.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member SECOND (Longer Text Added) -->
+      <div class="team-card bg-white rounded-3xl overflow-hidden shadow-lg text-center">
+        <div class="h-64 overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20">
+          <img src="images/team.png" alt="Gavaza" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h4 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-2">
+            Gavaza
+          </h4>
+          <p class="text-[#FFB6C1] mb-3 font-medium">
+            Senior Beauty Therapist
+          </p>
+
+          <div class="text-left bg-gradient-to-br from-[#FFB6C1]/5 to-[#D3D3D3]/5 rounded-2xl p-4 mt-4">
+            <h5 class="font-semibold text-[#4A4A4A] mb-2 text-sm">About Me</h5>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Gavaza is a skilled and dedicated beauty therapist with a strong focus
+              on relaxation, wellness, and client comfort. With hands-on experience
+              in professional beauty treatments, she ensures every client receives
+              personalized care tailored to their needs.
+              <br><br>
+              Known for her calm approach and attention to detail, Gavaza plays an
+              essential role in maintaining the salon’s high service standards.
+              Her goal is to help clients unwind, rejuvenate, and leave feeling
+              refreshed, confident, and well cared for.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+   <section class="py-20 px-6 relative bg-white" style="background-image: url('images/hero11.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="absolute inset-0 bg-white/20"></div>
+    <div class="relative z-10">
+     <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+  <!-- FOLLOW US : keep pink -->
+  <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light
+            drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]">
+    FOLLOW US
+  </p>
+
+  <!-- H3 : black text + white lighting/shadow -->
+  <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4
+             drop-shadow-[0_0_14px_rgba(255,255,255,1)]
+             drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)]">
+    See Our Work
+  </h3>
+
+  <!-- Supporting text : subtle visibility -->
+  <p class="text-[#4A4A4A]
+            drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]">
+    Check out our latest creations on TikTok
+  </p>
+</div>
+
+      <div class="flex justify-center">
+       <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@12twelvegelnails" data-unique-id="12twelvegelnails" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+        <section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@12twelvegelnails?refer=creator_embed">@12twelvegelnails</a>
+        </section>
+       </blockquote>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact & Map Section -->
+   <section id="contact" class="py-20 px-6 bg-gradient-to-br from-[#FFB6C1]/25 via-[#D3D3D3]/20 to-[#FFC1D0]/20">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">GET IN TOUCH</p>
+      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Visit Us</h3>
+      <p class="text-gray-600">Find us in the heart of Willow Park Manor, Pretoria East</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-10">
+      <div>
+       <div class="bg-white rounded-3xl p-8 shadow-lg mb-6">
+        <h4 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6">Contact Information</h4>
+        <div class="space-y-4">
+         <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center flex-shrink-0">
+           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+           </svg>
+          </div>
+          <div>
+           <p class="font-medium text-[#4A4A4A]">Address</p>
+           <p id="contact-address" class="text-gray-600 text-sm">11 Havelock Road, Willow Park Manor, Pretoria, Gauteng</p>
+          </div>
+         </div>
+         <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center flex-shrink-0">
+           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+           </svg>
+          </div>
+          <div>
+           <p class="font-medium text-[#4A4A4A]">Hours</p>
+           <p class="text-gray-600 text-sm">Tuesday - Sunday: 09:00 - 20:00</p>
+           <p class="text-gray-600 text-sm">Monday: Closed</p>
+          </div>
+         </div>
+         <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center flex-shrink-0">
+           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+           </svg>
+          </div>
+          <div>
+           <p class="font-medium text-[#4A4A4A]">Book Online</p><a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="text-[#FFB6C1] text-sm hover:underline">fresha.com/12twelve</a>
+          </div>
+         </div>
+        </div>
+       </div><a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white py-4 rounded-full font-semibold text-center hover:shadow-xl transition-all text-lg"> Book Your Appointment Now </a>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-lg h-[500px]"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.481614233434!2d28.318076315251443!3d-25.756841983633583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955fd6974e528b%3A0x4c2caac9d6586302!2s12twelve%20Gel%20Nails!5e1!3m2!1sen!2sza!4v1647532800000!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-gradient-to-br from-[#FFB6C1]/30 via-[#D3D3D3]/25 to-[#FFB6C1]/35 border-t border-[#FFB6C1]/30 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"><!-- Brand Column -->
+      <div class="md:col-span-1">
+       <div class="flex items-center gap-4">
+  <!-- Bigger footer logo -->
+  <img
+    src="images/logo.png"
+    alt="12TWELVE Gel Nails & Spa Logo"
+    class="w-32 h-32 object-contain"
+  >
+
+  <!-- Minimal text treatment -->
+  <p class="text-sm text-gray-600 leading-tight">
+    Gel Nails<br>
+    <span class="tracking-wide text-gray-500">&amp; Spa</span>
+  </p>
+</div>
+
+       <p class="text-sm text-gray-600 mb-4">Your destination for beautiful nails and relaxation in Pretoria East.</p>
+       <div class="flex gap-3"><a href="https://www.tiktok.com/@12twelvegelnails" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0]"> <i class="fab fa-tiktok"></i> </a> <a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="social-icon w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0]"> <i class="fas fa-calendar-check"></i> </a>
+       </div>
+      </div><!-- Quick Links -->
+      <div>
+       <h4 class="font-cormorant text-lg font-bold text-[#4A4A4A] mb-4">Quick Links</h4>
+       <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Home</a></li>
+        <li><a href="#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Our Services</a></li>
+        <li><a href="about.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">About Us</a></li>
+        <li><a href="gallery.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Gallery</a></li>
+        <li><a href="#team" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Our Team</a></li>
+        <li><a href="contact.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Contact</a></li>
+        <li><a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Book Online</a></li>
+       </ul>
+      </div><!-- Services -->
+      <div>
+       <h4 class="font-cormorant text-lg font-bold text-[#4A4A4A] mb-4">Popular Services</h4>
+       <ul class="space-y-2 text-sm">
+        <li><a href="#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Gel Nails</a></li>
+        <li><a href="#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Hair Braiding</a></li>
+        <li><a href="#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Eyelash Extensions</a></li>
+        <li><a href="#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Eyebrow Services</a></li>
+        <li><a href="#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Full Pedicure</a></li>
+       </ul>
+      </div><!-- Contact Info -->
+      <div>
+       <h4 class="font-cormorant text-lg font-bold text-[#4A4A4A] mb-4">Contact Info</h4>
+       <ul class="space-y-3 text-sm">
+        <li class="flex items-start gap-2 text-gray-600"><i class="fas fa-map-marker-alt text-[#FFB6C1] mt-1"></i> <span>11 Havelock Road, Willow Park Manor, Pretoria</span></li>
+        <li class="flex items-start gap-2 text-gray-600"><i class="fas fa-clock text-[#FFB6C1] mt-1"></i>
+         <div>
+          <div>
+           Tuesday - Sunday: 09:00 - 20:00
+          </div>
+          <div>
+           Monday: Closed
+          </div>
+         </div></li>
+       </ul>
+      </div>
+     </div><!-- Bottom Bar -->
+     <div class="border-t border-[#FFB6C1]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">© 2024 12TWELVE PTY (LTD). All rights reserved.</p>
+      <div class="flex gap-6 text-sm text-gray-500"><a href="#" class="hover:text-[#FFB6C1] transition-colors">Privacy Policy</a> <a href="#" class="hover:text-[#FFB6C1] transition-colors">Terms of Service</a>
+      </div>
+     </div>
+    </div>
+   </footer><!-- Service Detail Modal -->
+   <div id="service-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="booking-modal bg-white rounded-3xl max-w-lg w-full max-h-[90%] overflow-auto shadow-2xl">
+     <div class="p-8">
+      <div class="flex justify-between items-start mb-6">
+       <h4 id="modal-title" class="font-cormorant text-3xl font-bold text-[#4A4A4A] pr-4"></h4><button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors"> <i class="fas fa-times text-2xl"></i> </button>
+      </div>
+      <div id="modal-image" class="h-48 rounded-2xl mb-6 flex items-center justify-center overflow-hidden"><img id="modal-img" class="w-full h-full object-cover" alt="Service" loading="lazy" onerror="this.style.display='none'; document.getElementById('modal-emoji-container').style.display='flex';">
+       <div id="modal-emoji-container" class="w-full h-full bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20 flex items-center justify-center" style="display:none;"><span class="text-6xl" id="modal-emoji"></span>
+       </div>
+      </div>
+      <div class="space-y-4">
+       <div class="flex items-center gap-3 text-gray-600"><i class="fas fa-clock text-[#FFB6C1] text-xl"></i> <span id="modal-duration" class="font-medium"></span>
+       </div>
+       <p id="modal-description" class="text-gray-600 leading-relaxed"></p>
+       <div class="bg-gradient-to-br from-[#FFB6C1]/10 to-[#D3D3D3]/10 rounded-2xl p-6">
+        <div class="text-sm text-gray-500 mb-2">
+         Price
+        </div>
+        <div id="modal-price" class="text-3xl font-bold font-cormorant text-[#FFB6C1]"></div>
+       </div>
+      </div><a id="modal-book-btn" href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true" target="_blank" rel="noopener noreferrer" class="mt-8 w-full bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white py-4 rounded-full font-semibold hover:shadow-xl transition-all flex items-center justify-center gap-2 text-lg"> <i class="fas fa-calendar-check"></i>Book This Service </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script async src="https://www.tiktok.com/embed.js"></script>
+  <script>
+    const defaultConfig = {
+      salon_name: '12TWELVE',
+      salon_address: '11 Havelock Road, Willow Park Manor, Pretoria, Gauteng',
+      hero_tagline: 'LUXURY GEL NAILS & SPA',
+      about_text: '12TWELVE PTY (LTD) is a gel nail salon and spa located in Willow Park Manor, Pretoria East. Since its establishment on December 1st, 2021, the salon has been dedicated to offering a range of beauty services in a peaceful, welcoming space. Founded by Xitshembiso, born on the 12th of December, each visit is crafted with care and attention.',
+      team_member_1_name: 'Gavaza',
+      team_member_1_role: 'Therapist',
+      team_member_2_name: 'Xitshembiso Shibiti',
+      team_member_2_role: 'CEO & Founder | Gel Overlay & Extension Nail-Tech',
+      background_color: '#FFFFFF',
+      card_color: '#FFFFFF',
+      text_color: '#4A4A4A',
+      primary_color: '#FFB6C1',
+      accent_color: '#D3D3D3',
+      font_family: 'Poppins',
+      font_size: 16
+    };
+
+    const heroSlides = [
+      { 
+        image: 'images/hero1.jpg', 
+        tagline: 'LUXURY GEL NAILS & SPA',
+        title: 'Beautiful Gel Nails',
+        subtitle: 'Expert nail artistry at your fingertips'
+      },
+      { 
+        image: 'images/spa.jpg', 
+        tagline: 'PAMPER YOURSELF',
+        title: 'Relaxing Spa Experience',
+        subtitle: 'Unwind in our peaceful sanctuary'
+      },
+      { 
+        image: 'images/hero3.jpg', 
+        tagline: 'BEAUTY EXPERTS',
+        title: 'Transform Your Look',
+        subtitle: 'Where beauty meets elegance'
+      },
+      { 
+        image: 'images/hero4.jpg', 
+        tagline: 'HAIR ARTISTRY',
+        title: 'Stunning Hair Styles',
+        subtitle: 'From braids to curls, we do it all'
+      },
+      { 
+        image: 'images/hero5.jpg', 
+        tagline: 'PREMIUM BEAUTY',
+        title: 'Expert Care & Attention',
+        subtitle: 'Quality service in every detail'
+      }
+    ];
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    const services = [
+      { id: 1, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'featured', description: 'Beautiful plain overlay for your hands with a smooth, polished finish', image: 'images/s1.jpg' },
+      { id: 2, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'featured', description: 'Gel only application for toes - clean and elegant', image: 'images/s5.jpg' },
+      { id: 3, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'featured', description: 'Custom nail art on 2 nails - duration depends on design complexity', image: 'images/s3.jpg' },
+      { id: 4, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'featured', description: 'Professional long nail refill service to maintain your beautiful look', image: 'images/s4.jpg' },
+      { id: 5, name: 'Soak Off with New Set', duration: '30 mins', price: 'R 70', category: 'featured', description: 'Remove old set and prepare for fresh new nails', image: 'images/s6.jpg' },
+      { id: 6, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'featured', description: 'Short nail refill service for maintenance', image: 'images/s2.jpg' },
+      { id: 7, name: 'French Curls', duration: '4 hrs', price: 'from R 650', category: 'hair', description: 'Beautiful French curl styling for all hair types', image: 'images/Curls.jpg' },
+      { id: 8, name: 'Unplaiting', duration: '25 mins', price: 'from R 70', category: 'hair', description: 'Gentle hair unplaiting service with care', image: 'images/Unplaiting.jpg' },
+      { id: 9, name: 'Wig Styling', duration: '1 hr', price: 'from R 200', category: 'hair', description: 'Professional wig styling with installation using your own hair', image: 'images/wig.jpg' },
+      { id: 10, name: 'Extra Long Normal Braids', duration: '4 hrs', price: 'from R 900', category: 'hair', description: 'Extra long beautiful braids styled to perfection', image: 'images/long.jpg' },
+      { id: 11, name: 'Long Normal Braids', duration: '4 hrs', price: 'R 750', category: 'hair', description: 'Classic long braids for a timeless look', image: 'images/braids.jpg' },
+      { id: 12, name: 'Hair Wash', duration: '40 mins', price: 'R 100', category: 'hair', description: 'Professional hair washing service with quality products', image: 'images/wash.jpg' },
+      { id: 13, name: 'Cornrows', duration: '1 hr', price: 'from R 250', category: 'hair', description: 'Wig lines and cornrow styling', image: 'images/Cornrows.jpg' },
+      { id: 14, name: 'Straight Up/Straight Back', duration: '2 hrs', price: 'from R 380', category: 'hair', description: 'Clean straight up or back styling - Short from R380', image: 'images/straight.jpg' },
+      { id: 15, name: 'Tribal Braids', duration: '4 hrs 30 mins', price: 'from R 650', category: 'hair', description: 'Stunning tribal braids - Bra length', image: 'images/tribal.jpg' },
+      { id: 16, name: 'Short Normal Braids', duration: '3 hrs 30 mins', price: 'R 420', category: 'hair', description: 'Classic short braids for a neat look', image: 'images/short.jpg' },
+      { id: 17, name: 'Classic Lashes', duration: '1 hr', price: 'R 400', category: 'eyelashes', description: 'Individual lashes for a natural look - same size/type for consistency', image: 'images/classic.jpg' },
+      { id: 18, name: 'Lash Removal', duration: '45 mins', price: 'R 150', category: 'eyelashes', description: 'Safe and gentle professional lash removal', image: 'images/remove.jpg' },
+      { id: 19, name: 'Cluster Lashes', duration: '45 mins', price: 'from R 300', category: 'eyelashes', description: 'Beautiful cluster lash application for fuller lashes', image: 'images/clust.jpg' },
+      { id: 20, name: 'French Nails', duration: '25 mins', price: 'R 70', category: 'nails', description: 'Classic French manicure - R50 added on plain overlay or extension', image: 'images/french.jpg' },
+      { id: 21, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'nails', description: 'Custom nail art - duration depends on design complexity', image: 'images/s3.jpg' },
+      { id: 22, name: 'Full Pedicure', duration: '1 hr 30 mins', price: 'R 500', category: 'nails', description: 'Complete pedicure including callus removal, scrub, paraffin wax, massage & gel', image: 'images/pedi.jpg' },
+      { id: 23, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'nails', description: 'Gel only application for beautiful toes', image: 'images/toes.jpg' },
+      { id: 24, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long nail refill to maintain your look', image: 'images/s4.jpg' },
+      { id: 25, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'nails', description: 'Short nail refill service', image: 'images/s2.jpg' },
+      { id: 26, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'nails', description: 'Plain overlay for hands with smooth finish', image: 'images/shortt.jpg' },
+      { id: 27, name: 'Long Plain Gel Overlay on Hands', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long gel overlay for elegant hands', image: 'images/longg.jpg' },
+      { id: 28, name: 'Eyebrow Lamination & Wax', duration: '1 hr', price: 'R 270', category: 'eyebrows', description: 'Full brow lamination with professional wax', image: 'images/lam.jpg' },
+      { id: 29, name: 'Eyebrow Wax', duration: '30 mins', price: 'R 100', category: 'eyebrows', description: 'Clean professional eyebrow waxing', image: 'images/wax.jpg' },
+      { id: 30, name: 'Eyebrow Wax and Tint', duration: '30 mins', price: 'R 170', category: 'eyebrows', description: 'Combined wax and tint for perfect brows', image: 'images/tint.jpg' }
+    ];
+
+    let currentCategory = 'featured';
+
+    function createParticles() {
+      const container = document.getElementById('particles-container');
+      const particleCount = 20;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 10 + 5;
+        const left = Math.random() * 100;
+        const duration = Math.random() * 10 + 15;
+        const delay = Math.random() * 5;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${left}%`;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(particle);
+      }
+    }
+
+    function renderHeroSlides() {
+      const slideshow = document.getElementById('hero-slideshow');
+      slideshow.innerHTML = heroSlides.map((slide, index) => `
+        <div class="hero-slide absolute inset-0 ${index === 0 ? '' : 'opacity-0'}" data-slide="${index}" style="background-image: url('${slide.image}');">
+        </div>
+      `).join('');
+      
+      startSlideshow();
+    }
+
+    function startSlideshow() {
+      slideInterval = setInterval(() => {
+        nextSlide();
+      }, 5000);
+    }
+
+    function nextSlide() {
+      const slides = document.querySelectorAll('.hero-slide');
+      const indicators = document.querySelectorAll('.slide-indicator');
+      
+      slides[currentSlide].style.opacity = '0';
+      indicators[currentSlide].classList.remove('bg-white');
+      indicators[currentSlide].classList.add('bg-white/50');
+      
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      
+      slides[currentSlide].style.opacity = '1';
+      indicators[currentSlide].classList.remove('bg-white/50');
+      indicators[currentSlide].classList.add('bg-white');
+      
+      // Update text content with animations
+      const currentSlideData = heroSlides[currentSlide];
+      const tagline = document.getElementById('hero-tagline');
+      const title = document.getElementById('hero-title');
+      const subtitle = document.getElementById('hero-subtitle');
+      
+      // Remove animation classes
+      tagline.classList.remove('hero-tagline');
+      title.classList.remove('hero-title');
+      subtitle.classList.remove('hero-subtitle');
+      
+      // Update content
+      tagline.textContent = currentSlideData.tagline;
+      title.textContent = currentSlideData.title;
+      subtitle.textContent = currentSlideData.subtitle;
+      
+      // Re-add animation classes
+      setTimeout(() => {
+        tagline.classList.add('hero-tagline');
+        title.classList.add('hero-title');
+        subtitle.classList.add('hero-subtitle');
+      }, 50);
+    }
+
+    function goToSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const indicators = document.querySelectorAll('.slide-indicator');
+      
+      slides[currentSlide].style.opacity = '0';
+      indicators[currentSlide].classList.remove('bg-white');
+      indicators[currentSlide].classList.add('bg-white/50');
+      
+      currentSlide = index;
+      
+      slides[currentSlide].style.opacity = '1';
+      indicators[currentSlide].classList.remove('bg-white/50');
+      indicators[currentSlide].classList.add('bg-white');
+      
+      // Update text content
+      const currentSlideData = heroSlides[currentSlide];
+      document.getElementById('hero-tagline').textContent = currentSlideData.tagline;
+      document.getElementById('hero-title').textContent = currentSlideData.title;
+      document.getElementById('hero-subtitle').textContent = currentSlideData.subtitle;
+      
+      clearInterval(slideInterval);
+      startSlideshow();
+    }
+
+    function renderServices(category) {
+      const grid = document.getElementById('services-grid');
+      const filtered = services.filter(s => s.category === category);
+      
+      grid.innerHTML = filtered.map((service, index) => `
+        <div class="service-card bg-white rounded-3xl shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden scroll-scale stagger-${(index % 6) + 1}" onclick="openModal(${service.id})">
+          <div class="h-48 overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20">
+            <img src="${service.image}" alt="${service.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-cormorant text-xl font-semibold text-[#4A4A4A] flex-1 pr-2">${service.name}</h4>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 line-clamp-2">${service.description}</p>
+            <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-clock"></i>
+                ${service.duration}
+              </div>
+              <div class="text-[#FFB6C1] font-bold font-cormorant text-lg">${service.price}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Trigger scroll animations
+      setTimeout(() => {
+        const elements = document.querySelectorAll('.scroll-scale');
+        elements.forEach(el => el.classList.add('visible'));
+      }, 100);
+    }
+
+    function filterCategory(category) {
+      currentCategory = category;
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.category === category) {
+          btn.classList.add('active');
+        }
+      });
+      renderServices(category);
+    }
+
+    function openModal(serviceId) {
+      const service = services.find(s => s.id === serviceId);
+      if (!service) return;
+      
+      document.getElementById('modal-title').textContent = service.name;
+      document.getElementById('modal-duration').textContent = service.duration;
+      document.getElementById('modal-description').textContent = service.description;
+      document.getElementById('modal-price').textContent = service.price;
+      
+      const modalImg = document.getElementById('modal-img');
+      modalImg.src = service.image;
+      modalImg.style.display = 'block';
+      document.getElementById('modal-emoji-container').style.display = 'none';
+      
+      const modal = document.getElementById('service-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('service-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const isOpen = menu.classList.contains('translate-x-0');
+      
+      if (isOpen) {
+        menu.classList.remove('translate-x-0');
+        menu.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      } else {
+        menu.classList.remove('translate-x-full');
+        menu.classList.add('translate-x-0');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    // Scroll Animation Observer
+    function initScrollAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-scale').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    document.getElementById('service-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'service-modal') {
+        closeModal();
+      }
+    });
+
+    // Element SDK Integration
+    async function onConfigChange(config) {
+      const cfg = { ...defaultConfig, ...config };
+      
+      document.getElementById('header-name').textContent = cfg.salon_name;
+      document.getElementById('hero-tagline').textContent = cfg.hero_tagline;
+      document.getElementById('about-text').textContent = cfg.about_text;
+      document.getElementById('contact-address').textContent = cfg.salon_address;
+      document.getElementById('team-member-1-name').textContent = cfg.team_member_1_name;
+      document.getElementById('team-member-1-role').textContent = cfg.team_member_1_role;
+      document.getElementById('team-member-2-name').textContent = cfg.team_member_2_name;
+      document.getElementById('team-member-2-role').textContent = cfg.team_member_2_role;
+      
+      const fontStack = `${cfg.font_family}, 'Poppins', sans-serif`;
+      document.body.style.fontFamily = fontStack;
+      
+      const baseSize = cfg.font_size;
+      document.documentElement.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(config) {
+      const cfg = { ...defaultConfig, ...config };
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color,
+            set: (value) => { cfg.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => cfg.card_color,
+            set: (value) => { cfg.card_color = value; window.elementSdk.setConfig({ card_color: value }); }
+          },
+          {
+            get: () => cfg.text_color,
+            set: (value) => { cfg.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => cfg.primary_color,
+            set: (value) => { cfg.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+          },
+          {
+            get: () => cfg.accent_color,
+            set: (value) => { cfg.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family,
+          set: (value) => { cfg.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size,
+          set: (value) => { cfg.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      const cfg = { ...defaultConfig, ...config };
+      return new Map([
+        ['salon_name', cfg.salon_name],
+        ['salon_address', cfg.salon_address],
+        ['hero_tagline', cfg.hero_tagline],
+        ['about_text', cfg.about_text],
+        ['team_member_1_name', cfg.team_member_1_name],
+        ['team_member_1_role', cfg.team_member_1_role],
+        ['team_member_2_name', cfg.team_member_2_name],
+        ['team_member_2_role', cfg.team_member_2_role]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    createParticles();
+    renderHeroSlides();
+    renderServices('featured');
+    onConfigChange(defaultConfig);
+    
+    // Initialize scroll animations
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollAnimations();
+    });
+  </script>
+ </body>
+</html>
