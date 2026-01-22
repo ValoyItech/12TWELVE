@@ -748,8 +748,8 @@
     const services = [
       { id: 1, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'featured', description: 'Beautiful plain overlay for your hands with a smooth, polished finish', image: 'images/s1.jpg' },
       { id: 2, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'featured', description: 'Gel only application for toes - clean and elegant', image: 'images/s5.jpg' },
-      { id: 3, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'featured', description: 'Custom nail art on 2 nails - duration depends on design complexity', image: 'images/s3.jpg' },
-      { id: 4, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'featured', description: 'Professional long nail refill service to maintain your beautiful look', image: 'images/s4.jpg' },
+      { id: 3, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'featured', description: 'Custom nail art on 2 nails - duration depends on design complexity', image: 'images/art.jpg' },
+      { id: 4, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'featured', description: 'Professional long nail refill service to maintain your beautiful look', image: 'images/longrefill.jpg' },
       { id: 5, name: 'Soak Off with New Set', duration: '30 mins', price: 'R 70', category: 'featured', description: 'Remove old set and prepare for fresh new nails', image: 'images/s6.jpg' },
       { id: 6, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'featured', description: 'Short nail refill service for maintenance', image: 'images/s2.jpg' },
       { id: 7, name: 'French Curls', duration: '4 hrs', price: 'from R 650', category: 'hair', description: 'Beautiful French curl styling for all hair types', image: 'images/Curls.jpg' },
@@ -765,14 +765,14 @@
       { id: 17, name: 'Classic Lashes', duration: '1 hr', price: 'R 400', category: 'eyelashes', description: 'Individual lashes for a natural look - same size/type for consistency', image: 'images/classic.jpg' },
       { id: 18, name: 'Lash Removal', duration: '45 mins', price: 'R 150', category: 'eyelashes', description: 'Safe and gentle professional lash removal', image: 'images/remove.jpg' },
       { id: 19, name: 'Cluster Lashes', duration: '45 mins', price: 'from R 300', category: 'eyelashes', description: 'Beautiful cluster lash application for fuller lashes', image: 'images/clust.jpg' },
-      { id: 20, name: 'French Nails', duration: '25 mins', price: 'R 70', category: 'nails', description: 'Classic French manicure - R50 added on plain overlay or extension', image: 'images/french.jpg' },
-      { id: 21, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'nails', description: 'Custom nail art - duration depends on design complexity', image: 'images/s3.jpg' },
+      { id: 20, name: 'French Nails', duration: '25 mins', price: 'R 70', category: 'nails', description: 'Classic French manicure - R50 added on plain overlay or extension', image: 'images/frenchnails.jpg' },
+      { id: 21, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'nails', description: 'Custom nail art - duration depends on design complexity', image: 'images/art2.jpg' },
       { id: 22, name: 'Full Pedicure', duration: '1 hr 30 mins', price: 'R 500', category: 'nails', description: 'Complete pedicure including callus removal, scrub, paraffin wax, massage & gel', image: 'images/pedi.jpg' },
       { id: 23, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'nails', description: 'Gel only application for beautiful toes', image: 'images/toes.jpg' },
-      { id: 24, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long nail refill to maintain your look', image: 'images/s4.jpg' },
+      { id: 24, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long nail refill to maintain your look', image: 'images/longrefill.jpg' },
       { id: 25, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'nails', description: 'Short nail refill service', image: 'images/s2.jpg' },
-      { id: 26, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'nails', description: 'Plain overlay for hands with smooth finish', image: 'images/shortt.jpg' },
-      { id: 27, name: 'Long Plain Gel Overlay on Hands', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long gel overlay for elegant hands', image: 'images/longg.jpg' },
+      { id: 26, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'nails', description: 'Plain overlay for hands with smooth finish', image: 'images/shortplain.jpg' },
+      { id: 27, name: 'Long Plain Gel Overlay on Hands', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long gel overlay for elegant hands', image: 'images/longplain.jpg' },
       { id: 28, name: 'Eyebrow Lamination & Wax', duration: '1 hr', price: 'R 270', category: 'eyebrows', description: 'Full brow lamination with professional wax', image: 'images/lam.jpg' },
       { id: 29, name: 'Eyebrow Wax', duration: '30 mins', price: 'R 100', category: 'eyebrows', description: 'Clean professional eyebrow waxing', image: 'images/wax.jpg' },
       { id: 30, name: 'Eyebrow Wax and Tint', duration: '30 mins', price: 'R 170', category: 'eyebrows', description: 'Combined wax and tint for perfect brows', image: 'images/tint.jpg' }
@@ -887,9 +887,15 @@
       
       grid.innerHTML = filtered.map((service, index) => `
         <div class="service-card bg-white rounded-3xl shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden scroll-scale stagger-${(index % 6) + 1}" onclick="openModal(${service.id})">
-          <div class="h-48 overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20">
-            <img src="${service.image}" alt="${service.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
-          </div>
+          <div class="h-[260px] overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20 flex items-center justify-center">
+  <img 
+    src="${service.image}" 
+    alt="${service.name}" 
+    class="w-full h-full object-contain" 
+    loading="lazy"
+  >
+</div>
+
           <div class="p-6">
             <div class="flex justify-between items-start mb-3">
               <h4 class="font-cormorant text-xl font-semibold text-[#4A4A4A] flex-1 pr-2">${service.name}</h4>
