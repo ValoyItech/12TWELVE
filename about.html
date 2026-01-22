@@ -224,6 +224,97 @@
     html {
       scroll-behavior: smooth;
     }
+
+
+    .portrait-slider{
+  width: 100%;
+  overflow: hidden;
+  padding: 72px 0;
+  position: relative;
+  background: linear-gradient(to bottom, #f3f3f3, #ededed, #f3f3f3);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.slider-track{
+  display:flex;
+  gap: 22px;
+  width: max-content;
+  animation: scrollSlider 28s linear infinite;
+  will-change: transform;
+}
+
+.slide{
+  flex: 0 0 auto;
+  width: 320px;
+  aspect-ratio: 3 / 4;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f6f6f6;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+.slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display:block;
+}
+
+/* Desktop bigger cards */
+@media (min-width: 1024px){
+  .slide{ width: 360px; }
+}
+
+/* Mobile sizing */
+@media (max-width: 768px){
+  .portrait-slider{ padding: 40px 0; }
+  .slide{ width: 78vw; }
+}
+
+/* ✅ Pause on hover (desktop) */
+.portrait-slider:hover .slider-track{
+  animation-play-state: paused;
+}
+
+/* ✅ Pause while user is touching/dragging */
+.portrait-slider.is-paused .slider-track{
+  animation-play-state: paused;
+}
+
+/* Make the section feel scrollable */
+.portrait-slider .scroll-hint{
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+  background: rgba(255,255,255,0.7);
+  padding: 6px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+
+/* Infinite loop: track is duplicated, so translate -50% */
+@keyframes scrollSlider{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+
+.slider-scroll{
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;      /* Firefox hide */
+  -ms-overflow-style: none;   /* IE/Edge old */
+  cursor: grab;
+  padding: 0 18px;
+}
+.slider-scroll::-webkit-scrollbar{ display:none; } /* Chrome/Safari */
+.slider-scroll:active{ cursor: grabbing; }
+
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -235,7 +326,7 @@
      <div class="flex items-center gap-3">
       <div class="w-20 h-20 flex items-center justify-center">
   <img
-    src="images/logo.png"
+    src="images/aboutlogo.png"
     alt="12TWELVE Gel Nails Logo"
     class="w-full h-full object-contain"
   >
@@ -337,171 +428,206 @@
       </div>
      </div>
     </div>
-   </section><!-- Mission & Vision Section -->
-   <section class="py-24 px-6 bg-gradient-to-br from-[#FFB6C1]/10 via-white to-[#D3D3D3]/10">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16 scroll-fade-up">
-      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">OUR PURPOSE</p>
-      <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A]">Mission &amp; Vision</h2>
-     </div>
-     <div class="grid md:grid-cols-2 gap-10">
-      <div class="value-card relative bg-white rounded-3xl p-10 shadow-lg scroll-fade-left">
-       <div class="w-16 h-16 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-2xl flex items-center justify-center mb-6 shadow-md"><i class="fas fa-bullseye text-white text-2xl"></i>
-       </div>
-       <h3 id="mission-title" class="font-cormorant text-3xl font-bold text-[#4A4A4A] mb-4">Our Mission</h3>
-       <p id="mission-text" class="text-gray-600 leading-relaxed">To provide exceptional beauty services that enhance confidence and bring joy to every client. We are committed to delivering professional treatments in a welcoming environment, ensuring each visit is a moment of relaxation and transformation.</p>
-      </div>
-      <div class="value-card relative bg-white rounded-3xl p-10 shadow-lg scroll-fade-right">
-       <div class="w-16 h-16 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-2xl flex items-center justify-center mb-6 shadow-md"><i class="fas fa-eye text-white text-2xl"></i>
-       </div>
-       <h3 id="vision-title" class="font-cormorant text-3xl font-bold text-[#4A4A4A] mb-4">Our Vision</h3>
-       <p id="vision-text" class="text-gray-600 leading-relaxed">To expand our presence and become a leading beauty destination known for quality, innovation, and personalized care. We envision multiple locations where beauty enthusiasts can experience the 12TWELVE standard of excellence.</p>
-      </div>
-     </div>
+   </section>
+
+
+
+   <section class="portrait-slider" id="portraitSlider">
+  <div class="slider-scroll" id="sliderScroll" aria-label="Image carousel">
+
+    <div class="slider-track" id="sliderTrack">
+      <!-- 13 images -->
+      <div class="slide"><img src="images/slide/cs1.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs2.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs3.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs4.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs5.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs6.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs7.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs8.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs9.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs10.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs11.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs12.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs13.jpeg" alt=""></div>
+
+      <!-- duplicate for seamless loop -->
+      <div class="slide"><img src="images/slide/cs1.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs2.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs3.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs4.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs5.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs6.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs7.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs8.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs9.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs10.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs11.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs12.jpeg" alt=""></div>
+      <div class="slide"><img src="images/slide/cs13.jpeg" alt=""></div>
     </div>
-   </section><!-- Our Values Section -->
-   <section class="py-24 px-6 bg-white relative overflow-hidden">
-    <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1600" alt="Background" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
-     <div class="absolute inset-0 bg-white/5"></div>
-    </div>
-    <div class="max-w-7xl mx-auto relative z-10">
-     <div class="text-center mb-16 scroll-fade-up">
-      <p class="text-white text-sm tracking-[0.3em] mb-3 font-light drop-shadow-lg">WHAT WE STAND FOR</p>
-      <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-xl">Our Core Values</h2>
-      <p class="text-white/95 max-w-2xl mx-auto drop-shadow-lg">The principles that guide everything we do at 12TWELVE</p>
-     </div>
-     <div class="grid md:grid-cols-3 gap-8">
-      <div class="value-card relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 text-center scroll-scale stagger-1">
-       <div class="w-20 h-20 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"><i class="fas fa-gem text-white text-3xl"></i>
-       </div>
-       <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Excellence</h3>
-       <p class="text-gray-600">We strive for perfection in every service, ensuring the highest quality results that exceed expectations.</p>
-      </div>
-      <div class="value-card relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 text-center scroll-scale stagger-2">
-       <div class="w-20 h-20 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"><i class="fas fa-heart text-white text-3xl"></i>
-       </div>
-       <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Care</h3>
-       <p class="text-gray-600">Every client is treated with genuine warmth, respect, and personalized attention that makes them feel valued.</p>
-      </div>
-      <div class="value-card relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 text-center scroll-scale stagger-3">
-       <div class="w-20 h-20 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"><i class="fas fa-lightbulb text-white text-3xl"></i>
-       </div>
-       <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Innovation</h3>
-       <p class="text-gray-600">We stay current with the latest beauty trends and techniques to offer cutting-edge services.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Why Choose Us Section -->
+
+  </div>
+
+ 
+</section>
+
+
+
    <section class="py-24 px-6 bg-gradient-to-br from-[#D3D3D3]/10 via-white to-[#FFB6C1]/10">
-    <div class="max-w-7xl mx-auto">
-     <div class="text-center mb-16 scroll-fade-up">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-16 scroll-fade-up">
       <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">WHY 12Twelve</p>
       <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Why Choose Us</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">Discover what makes 12TWELVE the premier choice for beauty services in Pretoria East</p>
-     </div>
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-1">
-       <div class="h-48 overflow-hidden"><img src="images/s2.jpg" alt="Expert Technicians" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none';">
-       </div>
-       <div class="p-8">
-        <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Expert Technicians</h3>
-        <p class="text-gray-600 leading-relaxed">Our team consists of highly trained and certified beauty professionals who stay current with the latest techniques and trends.</p>
-       </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-2">
-       <div class="h-48 overflow-hidden"><img src="images/s6.jpg" alt="Premium Products" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none';">
-       </div>
-       <div class="p-8">
-        <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Premium Products</h3>
-        <p class="text-gray-600 leading-relaxed">We use only the highest quality, professional-grade products to ensure long-lasting and beautiful results.</p>
-       </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-3">
-       <div class="h-48 overflow-hidden"><img src="images/relax.jpg" alt="Relaxing Atmosphere" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none';">
-       </div>
-       <div class="p-8">
-        <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Relaxing Atmosphere</h3>
-        <p class="text-gray-600 leading-relaxed">Our serene salon environment in Willow Park Manor provides a peaceful escape from daily stress.</p>
-       </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-4">
-       <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600" alt="Flexible Hours" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none';">
-       </div>
-       <div class="p-8">
-        <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Flexible Hours</h3>
-        <p class="text-gray-600 leading-relaxed">Open Tuesday through Sunday from 9 AM to 8 PM, accommodating your busy schedule with extended hours.</p>
-       </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-1">
-       <div class="h-48 overflow-hidden"><img src="images/hygen.png" alt="Hygiene Standards" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none';">
-       </div>
-       <div class="p-8">
-        <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Hygiene Standards</h3>
-        <p class="text-gray-600 leading-relaxed">We maintain the highest hygiene and sanitation standards, ensuring a safe and clean environment for all clients.</p>
-       </div>
-      </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-2">
-       <div class="h-48 overflow-hidden"><img src="images/care.jpg" alt="Personalized Care" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" onerror="this.style.display='none';">
-       </div>
-       <div class="p-8">
-        <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Personalized Care</h3>
-        <p class="text-gray-600 leading-relaxed">Each service is tailored to your unique needs and preferences, ensuring you receive exactly what you desire.</p>
-       </div>
-      </div>
-     </div>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Discover what makes 12TWELVE the premier choice for beauty services in Pretoria East
+      </p>
     </div>
-   </section><!-- Stats Section -->
-   
-   
-   <section class="relative py-28 px-6 overflow-hidden">
 
-  <!-- Background image (very subtle texture) -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1) Expert -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-1">
+        <div class="h-48 overflow-hidden">
+          <img src="images/expert.png" alt="Expert Technicians"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+               loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Expert Technicians</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Our team consists of highly trained and certified beauty professionals who stay current with the latest techniques and trends.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2) Premium -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-2">
+        <div class="h-48 overflow-hidden">
+          <img src="images/s6.jpg" alt="Premium Products"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+               loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Premium Products</h3>
+          <p class="text-gray-600 leading-relaxed">
+            We use only the highest quality, professional-grade products to ensure long-lasting and beautiful results.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3) NEW MERGED CARD (Relax + Hygiene) using remax.jpg -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-3">
+        <div class="h-48 overflow-hidden">
+          <img src="images/relax.jpg" alt="Relaxing & Hygienic Studio"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+               loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Relaxing & Hygienic Studio</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Enjoy a calm, welcoming atmosphere with strict hygiene and sanitation standards — clean tools, spotless stations, and safe practices every time.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4) Hours -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-4">
+        <div class="h-48 overflow-hidden">
+          <img src="images/booknow.png" alt="Flexible Hours"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+               loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Flexible Hours</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Open Tuesday through Sunday from 9 AM to 8 PM, accommodating your busy schedule with extended hours.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5) Personalized -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-1">
+        <div class="h-48 overflow-hidden">
+          <img src="images/care.jpg" alt="Personalized Care"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+               loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Personalized Care</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Each service is tailored to your unique needs and preferences, ensuring you receive exactly what you desire.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6) NEW BALANCING CARD (to keep 6 items) -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-fade-up stagger-2">
+        <div class="h-48 overflow-hidden">
+          <img src="images/s7.jpg" alt="Attention to Detail"
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+               loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="p-8">
+          <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-3">Attention to Detail</h3>
+          <p class="text-gray-600 leading-relaxed">
+            From shaping to finishing touches, we focus on precision and consistency so your nails look flawless and last longer.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   
+   
+  <section class="relative py-24 px-6 overflow-hidden">
+
+  <!-- Background image (fully visible) -->
   <img
-    src="images/gray.png"
-    alt="12TWELVE Statistics"
-    class="absolute inset-0 w-full h-full object-cover opacity-15"
-  >
+  src="images/s3.jpg"
+  class="absolute inset-0 w-full h-full object-cover"
+>
 
-  <!-- Grey overlay -->
-  <div class="absolute inset-0 bg-[#5F5F5F]/10"></div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-
-      <div>
-        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-white">
+      <div class="stat-card">
+        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-[#4A4A4A]">
           3+
         </div>
-        <div class="text-white/85 text-sm md:text-base tracking-wide">
+        <div class="text-[#4A4A4A]/80 text-sm md:text-base tracking-wide font-medium">
           Years of Excellence
         </div>
       </div>
 
-      <div>
-        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-white">
+      <div class="stat-card">
+        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-[#4A4A4A]">
           30+
         </div>
-        <div class="text-white/85 text-sm md:text-base tracking-wide">
+        <div class="text-[#4A4A4A]/80 text-sm md:text-base tracking-wide font-medium">
           Beauty Services
         </div>
       </div>
 
-      <div>
-        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-white">
+      <div class="stat-card">
+        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-[#4A4A4A]">
           100%
         </div>
-        <div class="text-white/85 text-sm md:text-base tracking-wide">
+        <div class="text-[#4A4A4A]/80 text-sm md:text-base tracking-wide font-medium">
           Quality Guarantee
         </div>
       </div>
 
-      <div>
-        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-white">
+      <div class="stat-card">
+        <div class="stat-number font-cormorant text-5xl md:text-6xl font-bold mb-2 text-[#4A4A4A]">
           1000+
         </div>
-        <div class="text-white/85 text-sm md:text-base tracking-wide">
+        <div class="text-[#4A4A4A]/80 text-sm md:text-base tracking-wide font-medium">
           Happy Clients
         </div>
       </div>
@@ -509,6 +635,29 @@
     </div>
   </div>
 </section>
+
+
+<!-- Add this style once (can go into your main <style> block) -->
+<style>
+  .stat-card{
+    background: rgba(255,255,255,0.72);     /* glass */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 22px;
+    padding: 22px 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  }
+
+  /* make it feel softer on mobile */
+  @media (max-width: 768px){
+    .stat-card{
+      padding: 18px 12px;
+      border-radius: 18px;
+    }
+  }
+</style>
+
 
    
    
@@ -668,7 +817,7 @@
            Tuesday - Sunday: 09:00 - 20:00
           </div>
           <div>
-           Monday: Closed
+           Holidays : Hours may vary – please call to confirm
           </div>
          </div></li>
        </ul>
@@ -813,6 +962,38 @@
     initScrollAnimations();
     onConfigChange(defaultConfig);
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("portraitSlider");
+  const scroller = document.getElementById("sliderScroll");
+
+  if (!slider || !scroller) return;
+
+  let resumeTimer;
+
+  const pause = () => {
+    slider.classList.add("is-paused");
+    clearTimeout(resumeTimer);
+  };
+
+  const resumeSoon = () => {
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => {
+      slider.classList.remove("is-paused");
+    }, 900); // resumes after user stops interacting
+  };
+
+  // Mobile touch + desktop mouse interaction
+  scroller.addEventListener("touchstart", pause, { passive: true });
+  scroller.addEventListener("touchend", resumeSoon, { passive: true });
+  scroller.addEventListener("mousedown", pause);
+  scroller.addEventListener("mouseup", resumeSoon);
+  scroller.addEventListener("mouseleave", resumeSoon);
+  scroller.addEventListener("scroll", () => { pause(); resumeSoon(); }, { passive: true });
+});
+</script>
+
 
  <!-- WhatsApp Floating Button -->
 <a
