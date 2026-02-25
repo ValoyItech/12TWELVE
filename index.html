@@ -377,7 +377,7 @@
       <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Our Services</h3>
       <p class="text-gray-600 max-w-2xl mx-auto">Discover our range of professional beauty services designed to make you look and feel your best</p>
      </div><!-- Category Tabs -->
-     <div class="flex flex-wrap justify-center gap-3 mb-12"><button onclick="filterCategory('featured')" class="category-btn active px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="featured">Featured</button>  <button onclick="filterCategory('eyelashes')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="eyelashes">Eyelashes</button> <button onclick="filterCategory('nails')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="nails">Nails</button> <button onclick="filterCategory('eyebrows')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="eyebrows">Eyebrows</button>
+     <div class="flex flex-wrap justify-center gap-3 mb-12"><button onclick="filterCategory('featured')" class="category-btn active px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="featured">Featured</button>   <button onclick="filterCategory('nails')" class="category-btn px-8 py-3 rounded-full border-2 border-[#FFB6C1] font-medium text-sm" data-category="nails">Nails</button> 
      </div><!-- Services Grid -->
      <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Services will be rendered here -->
      </div>
@@ -434,79 +434,63 @@
 
 
 <section id="team" class="py-24 px-6 bg-gradient-to-br from-[#FFB6C1]/40 via-[#FFC1D0]/30 to-[#D3D3D3]/35 border-t-8 border-[#D3D3D3]">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-5xl mx-auto">
 
-    <div class="text-center mb-16">
-      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">OUR TEAM</p>
-      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Meet Our Experts</h3>
+    <!-- Section Heading -->
+    <div class="text-center mb-14">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">FOUNDER</p>
+      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">
+        Meet Xitshembiso
+      </h3>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Our talented team is dedicated to bringing out your natural beauty
+        The heart behind 12TWELVE Gel Nails
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+    <!-- Founder Card -->
+    <div class="team-card bg-white rounded-3xl shadow-xl overflow-hidden">
 
-      <!-- Founder FIRST -->
-      <div class="team-card bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-        <div class="h-64 overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20">
-          <img src="images/founder.jpg" alt="Xitshembiso" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
+      <div class="grid md:grid-cols-2 items-center">
+
+        <!-- Image (FULL IMAGE – NO CROP) -->
+        <div class="bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20 flex items-center justify-center p-6">
+          <img src="images/founder.jpg"
+               alt="Xitshembiso Shibiti"
+               class="w-full max-h-[450px] object-contain"
+               loading="lazy"
+               onerror="this.style.display='none';">
         </div>
-        <div class="p-8">
-          <h4 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-2">
+
+        <!-- Text -->
+        <div class="p-10 text-center md:text-left">
+          <h4 class="font-cormorant text-3xl font-bold text-[#4A4A4A] mb-2">
             Xitshembiso Shibiti
           </h4>
-          <p class="text-[#FFB6C1] mb-3 font-medium">
-            CEO &amp; Founder | Gel Overlay &amp; Extension Nail-Tech
+
+          <p class="text-[#FFB6C1] font-medium mb-5">
+            CEO & Founder | Gel Overlay & Extension Nail-Tech
           </p>
 
-          <div class="text-left bg-gradient-to-br from-[#FFB6C1]/5 to-[#D3D3D3]/5 rounded-2xl p-4 mt-4">
-            <h5 class="font-semibold text-[#4A4A4A] mb-2 text-sm">About Me</h5>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              My name is Xitshembiso Shibiti, the CEO &amp; Founder of 12TWELVE PTY (LTD).
-              I established the salon on December 1st, 2021, driven by a deep passion
-              for nail artistry, self-care, and creating a space where clients feel
-              confident, relaxed, and valued.
-              <br><br>
-              With professional training in gel overlays and nail extensions, I pride
-              myself on precision, hygiene, and creativity. My mission is to deliver
-              high-quality beauty services while building long-lasting relationships
-              with clients through trust, consistency, and exceptional service.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Team Member SECOND (Longer Text Added) -->
-      <div class="team-card bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-        <div class="h-64 overflow-hidden bg-gradient-to-br from-[#FFB6C1]/20 to-[#D3D3D3]/20">
-          <img src="images/hygen.png" alt="Gavaza" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
-        </div>
-        <div class="p-8">
-          <h4 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-2">
-            Gavaza
-          </h4>
-          <p class="text-[#FFB6C1] mb-3 font-medium">
-            Senior Beauty Therapist
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Founder of 12TWELVE PTY (LTD), established in December 2021, Xitshembiso built the salon from a deep passion for nail artistry and self-care.
+            <br><br>
+            Professionally trained in gel overlays and extensions, she is known for precision, hygiene, creativity, and delivering a luxurious experience where every visit feels polished and personal.
           </p>
 
-          <div class="text-left bg-gradient-to-br from-[#FFB6C1]/5 to-[#D3D3D3]/5 rounded-2xl p-4 mt-4">
-            <h5 class="font-semibold text-[#4A4A4A] mb-2 text-sm">About Me</h5>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Gavaza is a skilled and dedicated beauty therapist with a strong focus
-              on relaxation, wellness, and client comfort. With hands-on experience
-              in professional beauty treatments, she ensures every client receives
-              personalized care tailored to their needs.
-              <br><br>
-              Known for her calm approach and attention to detail, Gavaza plays an
-              essential role in maintaining the salon’s high service standards.
-              Her goal is to help clients unwind, rejuvenate, and leave feeling
-              refreshed, confident, and well cared for.
-            </p>
-          </div>
+          <!-- Button -->
+          <a href="https://www.fresha.com/a/12twelve-pretoria-11-havelock-road-mgq253q9/all-offer?venue=true"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-block bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all">
+             Book With Xitshembiso
+          </a>
+
         </div>
+
       </div>
 
     </div>
+
   </div>
 </section>
 
