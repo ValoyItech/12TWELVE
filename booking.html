@@ -626,25 +626,30 @@
   </div>
 
   <script>
-    // Services Data
-    const services = [
+  // Services Data
+const services = [
   // Featured Nails
-  { id: 1, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'featured', description: 'Beautiful plain overlay for your hands' },
-  { id: 2, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'featured', description: 'Gel only application for toes' },
-  { id: 3, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'featured', description: 'Custom nail art on 2 nails' },
-  { id: 4, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'featured', description: 'Professional long nail refill service' },
-  { id: 5, name: 'Soak Off with New Set', duration: '30 mins', price: 'R 70', category: 'featured', description: 'Remove old set and prepare for fresh nails' },
-  { id: 6, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'featured', description: 'Short nail refill service' },
-  
+  { id: 1, name: 'Short Plain Overlay on Hands/Refill', duration: '1 hr 50 mins', price: 'R 400', category: 'featured', description: 'Applying gel on short natural nails' },
+  { id: 2, name: 'Plain Gel Toes', duration: '1 hr 15 mins', price: 'R 310', category: 'featured', description: 'Cleaning the nails, cutting the cuticles and applying gel' },
+  { id: 3, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'from R 70', category: 'featured', description: 'Drawing of flowers or patterns on 2 nails' },
+  { id: 4, name: 'Long Plain Gel Overlay on Hands/Refill', duration: '2 hrs', price: 'R 450', category: 'featured', description: 'Applying gel on long natural nails' },
+  { id: 5, name: 'Gel Soak Off', duration: '45 mins', price: 'R 100', category: 'featured', description: 'Gel removal using electronic filer or soak off' },
+
   // All Nails
-  { id: 20, name: 'French Nails', duration: '25 mins', price: 'R 70', category: 'nails', description: 'Classic French manicure' },
-  { id: 21, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'nails', description: 'Custom nail art' },
-  { id: 22, name: 'Full Pedicure', duration: '1 hr 30 mins', price: 'R 500', category: 'nails', description: 'Complete pedicure with callus removal, scrub, paraffin wax, massage & gel' },
-  { id: 23, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'nails', description: 'Gel only application for toes' },
-  { id: 24, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long nail refill' },
-  { id: 25, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'nails', description: 'Short nail refill service' },
-  { id: 26, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'nails', description: 'Plain overlay for hands' },
-  { id: 27, name: 'Long Plain Gel Overlay on Hands', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long gel overlay for elegant hands' }
+  { id: 20, name: 'Full Pedicure', duration: '1 hr 30 mins', price: 'R 550', category: 'nails', description: 'Includes removing calluses with scrub and full treatment' },
+  { id: 21, name: 'Plain Gel Toes', duration: '1 hr 15 mins', price: 'R 310', category: 'nails', description: 'Cleaning the nails, cutting the cuticles and applying gel' },
+  { id: 22, name: 'Short Plain Overlay on Hands/Refill', duration: '1 hr 50 mins', price: 'R 400', category: 'nails', description: 'Applying gel on short natural nails' },
+  { id: 23, name: 'Long Plain Gel Overlay on Hands/Refill', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Applying gel on long natural nails' },
+  { id: 24, name: 'Plain Glueless Tips', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Extension using glueless tips' },
+  { id: 25, name: 'Ombre / French Nail Art', duration: '25 mins', price: 'R 80', category: 'nails', description: 'French or ombre curved nail design' },
+  { id: 26, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'from R 70', category: 'nails', description: 'Drawing of flowers or patterns' },
+  { id: 27, name: 'Buff and Shine with Art', duration: '1 hr 20 mins', price: 'R 270', category: 'nails', description: 'Buff, shine and nail art included' },
+  { id: 28, name: 'Buff and Shine (Hands/Toes)', duration: '55 mins', price: 'R 200', category: 'nails', description: 'Cleaning nails and applying shine gel' },
+  { id: 29, name: 'Gel Soak Off', duration: '45 mins', price: 'R 100', category: 'nails', description: 'Gel removal using electronic filer or soak off' },
+  { id: 30, name: 'Sculpture Extension', duration: '2 hrs 45 mins', price: 'R 550', category: 'nails', description: 'Building the nail with sculpture extension' },
+  { id: 31, name: 'Plain Gel Overlay plus Free 2 Nail Art', duration: '2 hrs', price: 'from R 380', category: 'nails', description: 'Overlay with 2 free nail art designs' },
+  { id: 32, name: 'Nail Repair', duration: '10 mins', price: 'from R 30', category: 'nails', description: 'Per nail repair service' },
+  { id: 33, name: 'Foot Spa', duration: '1 hr', price: 'R 300', category: 'nails', description: 'Peel, soak, scrub, exfoliate & massage' }
 ];
 
     // Mobile Menu Toggle
