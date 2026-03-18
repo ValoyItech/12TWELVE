@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now | 12TWELVE Gel Nails</title>
+
+<meta name="description" content="Book your appointment at 12TWELVE Gel Nails in Pretoria East. Choose your preferred service and submit via email or WhatsApp.">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book Now | 12TWELVE Gel Nails">
+<meta property="og:description" content="Book your appointment at 12TWELVE Gel Nails in Pretoria East.">
+<meta property="og:url" content="https://www.12twelvesalon.co.za/booking.html">
+<meta property="og:image" content="https://www.12twelvesalon.co.za/images/hero5.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book Now | 12TWELVE Gel Nails">
+<meta name="twitter:description" content="Book your appointment at 12TWELVE Gel Nails in Pretoria East.">
+<meta name="twitter:image" content="https://www.12twelvesalon.co.za/images/hero5.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    
+    /* Scroll Animations */
+    .scroll-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .scroll-fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-fade-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.6s ease-out;
+    }
+    .scroll-fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .scroll-fade-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.6s ease-out;
+    }
+    .scroll-fade-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .scroll-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s ease-out;
+    }
+    .scroll-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    /* Form Styles */
+    .form-input {
+      transition: all 0.3s ease;
+    }
+    .form-input:focus {
+      box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.3);
+    }
+    
+    /* Service Card Selection */
+    .service-option {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .service-option:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 182, 193, 0.25);
+    }
+    .service-option.selected {
+      border-color: #FFB6C1;
+      background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(255, 193, 208, 0.1) 100%);
+      box-shadow: 0 0 0 2px #FFB6C1;
+    }
+    
+    /* Submit Method Cards */
+    .submit-method {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .submit-method:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
+    }
+    .submit-method.selected {
+      border-color: #FFB6C1;
+      background: linear-gradient(135deg, rgba(255, 182, 193, 0.15) 0%, rgba(255, 193, 208, 0.15) 100%);
+      box-shadow: 0 0 0 2px #FFB6C1;
+    }
+    
+    /* Review Cards */
+    .review-card {
+      transition: all 0.3s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 182, 193, 0.2);
+    }
+    
+    /* Stars */
+    .star-filled { color: #FFB6C1; }
+    .star-empty { color: #D3D3D3; }
+    
+    /* Social Icons */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    :root {
+      --pink: #FFB6C1;
+      --grey: #D3D3D3;
+      --white: #FFFFFF;
+      --dark-grey: #8B8B8B;
+      --text: #4A4A4A;
+    }
+  </style>
+ </head>
+ <body class="h-full font-poppins bg-white text-[#4A4A4A]">
+  <div id="app" class="h-full w-full overflow-auto">
+   
+   <!-- Sticky Header -->
+   <header class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50 border-b border-[#FFB6C1]/20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+     <div class="flex items-center gap-3">
+       <div class="w-16 h-16 flex items-center justify-center">
+        <img src="images/logo.png" alt="12TWELVE Gel Nails Logo" class="w-full h-full object-contain">
+       </div>
+       <div>
+        <p class="text-xs text-[#8B8B8B]">Gel Nails</p>
+       </div>
+     </div>
+     <nav class="hidden md:flex items-center gap-6">
+       <a href="index.html" class="text-sm hover:text-[#FFB6C1] transition-colors">Home</a>
+       <a href="index.html#services" class="text-sm hover:text-[#FFB6C1] transition-colors">Services</a>
+       <a href="about.html" class="text-sm hover:text-[#FFB6C1] transition-colors">About</a>
+       <a href="gallery.html" class="text-sm hover:text-[#FFB6C1] transition-colors">Gallery</a>
+       <a href="index.html#team" class="text-sm hover:text-[#FFB6C1] transition-colors">Team</a>
+       <a href="contact.html" class="text-sm hover:text-[#FFB6C1] transition-colors">Contact</a>
+       <a href="booking.html" class="bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg transition-all">Book Now</a>
+     </nav>
+     <button onclick="toggleMobileMenu()" class="md:hidden text-[#FFB6C1]">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+     </button>
+    </div>
+   </header>
+
+   <!-- Mobile Sidebar Menu -->
+   <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden" onclick="toggleMobileMenu()"></div>
+   <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 overflow-auto">
+    <div class="p-6">
+     <div class="flex justify-between items-center mb-8">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 flex items-center justify-center">
+        <img src="images/logo.png" alt="12TWELVE Gel Nails Logo" class="w-full h-full object-contain">
+       </div>
+       <div>
+        <span class="font-cormorant text-xl font-bold text-[#FFB6C1]">12Twelve</span>
+        <p class="text-xs text-gray-500">Menu</p>
+       </div>
+      </div>
+      <button onclick="toggleMobileMenu()" class="text-gray-400 hover:text-gray-600">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+       </svg>
+      </button>
+     </div>
+     <nav class="flex flex-col gap-1">
+       <a href="index.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()">
+         <i class="fas fa-home w-6"></i> Home
+       </a>
+       <a href="index.html#services" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()">
+         <i class="fas fa-spa w-6"></i> Services
+       </a>
+       <a href="about.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()">
+         <i class="fas fa-info-circle w-6"></i> About Us
+       </a>
+       <a href="gallery.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()">
+         <i class="fas fa-images w-6"></i> Gallery
+       </a>
+       <a href="index.html#team" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()">
+         <i class="fas fa-users w-6"></i> Our Team
+       </a>
+       <a href="contact.html" class="text-base hover:bg-[#FFB6C1]/10 hover:text-[#FFB6C1] transition-colors py-3 px-4 rounded-lg" onclick="toggleMobileMenu()">
+         <i class="fas fa-envelope w-6"></i> Contact
+       </a>
+       <div class="border-t border-gray-200 my-4"></div>
+       <a href="booking.html" class="bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white px-6 py-4 rounded-full text-base font-semibold text-center hover:shadow-xl transition-all mt-4">
+         <i class="fas fa-calendar-check"></i> Book Appointment
+       </a>
+     </nav>
+     <div class="mt-8 pt-6 border-t border-gray-200">
+      <p class="text-sm text-gray-500 mb-3">Follow Us</p>
+      <div class="flex gap-3">
+        <a href="https://www.tiktok.com/@12twelvegelnails" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/xitshembisoshibiti/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/p/NailsbyTshembi-100076430327900/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="booking.html" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fas fa-calendar-check"></i>
+        </a>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <!-- Booking Hero Section -->
+   <section class="relative py-20 px-6 bg-gradient-to-br from-[#FFB6C1]/30 via-[#FFC1D0]/20 to-[#D3D3D3]/25">
+    <div class="max-w-4xl mx-auto text-center scroll-fade-up">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">RESERVE YOUR SPOT</p>
+      <h1 class="font-cormorant text-4xl md:text-6xl font-bold text-[#4A4A4A] mb-6">Book Your Appointment</h1>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">Choose your preferred service, select a date and time, and submit your booking via email or WhatsApp. We can't wait to pamper you!</p>
+    </div>
+   </section>
+
+   <!-- Booking Form Section -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-3 gap-10">
+        
+        <!-- Main Booking Form -->
+        <div class="lg:col-span-2 scroll-fade-left">
+          <form id="booking-form" class="space-y-8">
+            
+            <!-- Personal Details -->
+            <div class="bg-gradient-to-br from-[#FFB6C1]/10 to-[#D3D3D3]/10 rounded-3xl p-8">
+              <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6 flex items-center gap-3">
+                <i class="fas fa-user text-[#FFB6C1]"></i> Your Details
+              </h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                  <input type="text" id="fullName" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FFB6C1] focus:outline-none" placeholder="Your full name">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                  <input type="tel" id="phone" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FFB6C1] focus:outline-none" placeholder="e.g. 067 141 1995">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                  <input type="email" id="email" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FFB6C1] focus:outline-none" placeholder="your@email.com">
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Selection -->
+            <div class="bg-gradient-to-br from-[#FFB6C1]/10 to-[#D3D3D3]/10 rounded-3xl p-8">
+              <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6 flex items-center gap-3">
+                <i class="fas fa-spa text-[#FFB6C1]"></i> Select Service *
+              </h3>
+              
+              <!-- Category Tabs -->
+              <div class="flex flex-wrap gap-2 mb-6">
+  <button type="button" onclick="filterServices('featured')" class="service-tab active px-4 py-2 rounded-full border border-[#FFB6C1] text-sm font-medium transition-all" data-category="featured">Featured</button>
+  <button type="button" onclick="filterServices('nails')" class="service-tab px-4 py-2 rounded-full border border-[#FFB6C1] text-sm font-medium transition-all" data-category="nails">All Nails</button>
+</div>
+
+              <!-- Services Grid -->
+              <div id="booking-services-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[400px] overflow-y-auto pr-2">
+                <!-- Services rendered here -->
+              </div>
+              <input type="hidden" id="selected-service" required>
+              <input type="hidden" id="selected-service-name">
+            </div>
+
+            <!-- Date & Time -->
+            <div class="bg-gradient-to-br from-[#FFB6C1]/10 to-[#D3D3D3]/10 rounded-3xl p-8">
+              <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6 flex items-center gap-3">
+                <i class="fas fa-calendar-alt text-[#FFB6C1]"></i> Preferred Date & Time *
+              </h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                  <input type="date" id="booking-date" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FFB6C1] focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+                  <select id="booking-time" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FFB6C1] focus:outline-none">
+                    <option value="">Select a time</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">01:00 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                    <option value="17:00">05:00 PM</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="bg-gradient-to-br from-[#FFB6C1]/10 to-[#D3D3D3]/10 rounded-3xl p-8">
+              <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6 flex items-center gap-3">
+                <i class="fas fa-comment text-[#FFB6C1]"></i> Special Requests
+              </h3>
+              <textarea id="special-requests" rows="4" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#FFB6C1] focus:outline-none resize-none" placeholder="Any special requests, allergies, or specific requirements..."></textarea>
+            </div>
+
+            <!-- Submit Method -->
+            <div class="bg-gradient-to-br from-[#FFB6C1]/10 to-[#D3D3D3]/10 rounded-3xl p-8">
+              <h3 class="font-cormorant text-2xl font-bold text-[#4A4A4A] mb-6 flex items-center gap-3">
+                <i class="fas fa-paper-plane text-[#FFB6C1]"></i> How would you like to submit? *
+              </h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="submit-method bg-white rounded-2xl p-6 border-2 border-gray-200 text-center" onclick="selectSubmitMethod('whatsapp')" id="method-whatsapp">
+                  <div class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                    <i class="fab fa-whatsapp"></i>
+                  </div>
+                  <h4 class="font-cormorant text-xl font-bold text-[#4A4A4A] mb-2">WhatsApp</h4>
+                  <p class="text-sm text-gray-600">Send booking to<br><strong>067 141 1995</strong></p>
+                </div>
+                <div class="submit-method bg-white rounded-2xl p-6 border-2 border-gray-200 text-center" onclick="selectSubmitMethod('email')" id="method-email">
+                  <div class="w-16 h-16 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h4 class="font-cormorant text-xl font-bold text-[#4A4A4A] mb-2">Email</h4>
+                  <p class="text-sm text-gray-600">Send booking to<br><strong>booking@12twelvesalon.co.za</strong></p>
+                </div>
+              </div>
+              <input type="hidden" id="submit-method" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white py-4 rounded-full font-semibold hover:shadow-xl transition-all text-lg flex items-center justify-center gap-3">
+              <i class="fas fa-calendar-check"></i>
+              <span id="submit-text">Complete Booking</span>
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Sidebar Info -->
+        <div class="lg:col-span-1 scroll-fade-right">
+          <div class="sticky top-24 space-y-6">
+            
+            <!-- Contact Card -->
+            <div class="bg-white rounded-3xl shadow-lg p-6 border border-[#FFB6C1]/20">
+              <h4 class="font-cormorant text-xl font-bold text-[#4A4A4A] mb-4">Need Help?</h4>
+              <div class="space-y-4">
+                <a href="tel:0671411995" class="flex items-center gap-3 text-gray-600 hover:text-[#FFB6C1] transition-colors">
+                  <div class="w-10 h-10 bg-[#FFB6C1]/10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-phone text-[#FFB6C1]"></i>
+                  </div>
+                  <span>067 141 1995</span>
+                </a>
+                <a href="mailto:booking@12twelvesalon.co.za" class="flex items-center gap-3 text-gray-600 hover:text-[#FFB6C1] transition-colors">
+                  <div class="w-10 h-10 bg-[#FFB6C1]/10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-envelope text-[#FFB6C1]"></i>
+                  </div>
+                  <span class="text-sm">booking@12twelvesalon.co.za</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Opening Hours -->
+            <div class="bg-white rounded-3xl shadow-lg p-6 border border-[#FFB6C1]/20">
+              <h4 class="font-cormorant text-xl font-bold text-[#4A4A4A] mb-4">Opening Hours</h4>
+              <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Mon - Sun</span>
+                  <span class="font-medium">09:00 - 18:00</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Holidays</span>
+                  <span class="font-medium text-[#FFB6C1]">Hours vary</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="bg-white rounded-3xl shadow-lg p-6 border border-[#FFB6C1]/20">
+              <h4 class="font-cormorant text-xl font-bold text-[#4A4A4A] mb-4">Our Location</h4>
+              <p class="text-sm text-gray-600 mb-4">11 Havelock Road, Willow Park Manor, Pretoria, Gauteng</p>
+              <a href="https://www.google.com/maps/place/12Twelve+Salon+-+Your+best+gel+nail+salon+in+Pretoria/@-25.7399438,28.3299836,17z" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-[#FFB6C1] to-[#FFC1D0] text-white py-3 rounded-full text-center font-medium hover:shadow-lg transition-all text-sm">
+                <i class="fas fa-map-marker-alt mr-2"></i> Get Directions
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+   </section>
+
+   <!-- Reviews Section -->
+<section class="py-20 px-6 bg-gradient-to-br from-[#FFB6C1]/20 via-[#D3D3D3]/15 to-[#FFB6C1]/25">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 scroll-fade-up">
+      <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">TESTIMONIALS</p>
+      <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">What Our Clients Say</h3>
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <div class="flex text-[#FFB6C1] text-2xl">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="text-2xl font-bold text-[#4A4A4A]">5.0</span>
+      </div>
+      <p class="text-gray-600">Based on Google Reviews • <a href="https://www.google.com/maps/place/12Twelve+Salon+-+Your+best+gel+nail+salon+in+Pretoria/@-25.7399438,28.3299836,17z" target="_blank" rel="noopener noreferrer" class="text-[#FFB6C1] hover:underline">Read all reviews</a></p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Review 1 - Bridget Mahamba Mahlangu -->
+      <div class="review-card bg-white rounded-3xl p-6 shadow-lg scroll-scale">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center text-white font-bold text-lg">B</div>
+          <div>
+            <h5 class="font-semibold text-[#4A4A4A]">Bridget Mahamba Mahlangu</h5>
+            <div class="flex text-[#FFB6C1] text-sm">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"I had the most amazing experience at 12|12 Salon! ✨ From the moment I walked in, everything was just perfect. The service was exceptional, the staff were warm, welcoming and so professional. My nails have honestly never looked this good — they are the best they have ever been! 💅🏽 The wine and relaxing atmosphere made it feel like such a luxurious treat."</p>
+        <p class="text-xs text-gray-400 mt-4">Sculpted nails, Nail painting • 1 week ago</p>
+      </div>
+
+      <!-- Review 2 - Katlego Jacobs -->
+      <div class="review-card bg-white rounded-3xl p-6 shadow-lg scroll-scale">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center text-white font-bold text-lg">K</div>
+          <div>
+            <h5 class="font-semibold text-[#4A4A4A]">Katlego Jacobs</h5>
+            <div class="flex text-[#FFB6C1] text-sm">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"I started my journey with 12Twelve in 2024. At the time my nails were really short and I lacked confidence, but little did I know that I had stepped into one of the safest and most welcoming spaces. The peace and calm I feel every time I'm there is unmatched. I'm happy that we managed to bring back your confidence!"</p>
+        <p class="text-xs text-gray-400 mt-4">1 week ago</p>
+      </div>
+
+      <!-- Review 3 - Nhlalala Mabunda -->
+      <div class="review-card bg-white rounded-3xl p-6 shadow-lg scroll-scale">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#FFB6C1] to-[#FFC1D0] rounded-full flex items-center justify-center text-white font-bold text-lg">N</div>
+          <div>
+            <h5 class="font-semibold text-[#4A4A4A]">Nhlalala Mabunda</h5>
+            <div class="flex text-[#FFB6C1] text-sm">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed">"12|12 is definitely the girl she thinks she is! One of the absolute best nail techs in town. The nails are always stunning, and every appointment feels like a mini therapy session. Great energy, great conversations, and flawless results every time. 💅 I highly recommend!"</p>
+        <p class="text-xs text-gray-400 mt-4">4 days ago</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://www.google.com/maps/place/12Twelve+Salon+-+Your+best+gel+nail+salon+in+Pretoria/@-25.7399438,28.3299836,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[#FFB6C1] hover:text-[#4A4A4A] transition-colors font-medium">
+        <i class="fab fa-google"></i> Read more reviews on Google
+      </a>
+    </div>
+  </div>
+</section>
+
+   <!-- Map Section -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 scroll-fade-up">
+        <p class="text-[#FFB6C1] text-sm tracking-[0.3em] mb-3 font-light">FIND US</p>
+        <h3 class="font-cormorant text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-4">Visit Our Salon</h3>
+        <p class="text-gray-600">11 Havelock Road, Willow Park Manor, Pretoria, Gauteng</p>
+      </div>
+      
+      <div class="rounded-3xl overflow-hidden shadow-2xl scroll-scale">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.481614233434!2d28.318076315251443!3d-25.756841983633583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955fd6974e528b%3A0x4c2caac9d6586302!2s12twelve%20Gel%20Nails!5e1!3m2!1sen!2sza!4v1647532800000!5m2!1sen!2sza" 
+          width="100%" 
+          height="500" 
+          style="border:0;" 
+          allowfullscreen 
+          loading="lazy"
+          class="w-full">
+        </iframe>
+      </div>
+    </div>
+   </section>
+
+   <!-- Footer -->
+   <footer class="bg-gradient-to-br from-[#FFB6C1]/30 via-[#D3D3D3]/25 to-[#FFB6C1]/35 border-t border-[#FFB6C1]/30 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="md:col-span-1">
+       <div class="flex items-center gap-4">
+        <img src="images/logo.png" alt="12TWELVE Gel Nails Logo" class="w-32 h-32 object-contain">
+        <p class="text-sm text-gray-600 leading-tight">Gel Nails<br></p>
+       </div>
+       <p class="text-sm text-gray-600 mb-4">Your destination for beautiful nails and relaxation in Pretoria East.</p>
+       <div class="flex gap-3">
+        <a href="https://www.tiktok.com/@12twelvegelnails" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/xitshembisoshibiti/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/p/NailsbyTshembi-100076430327900/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="booking.html" class="w-10 h-10 bg-[#FFB6C1] rounded-full flex items-center justify-center text-white hover:bg-[#FFC1D0] transition-colors">
+          <i class="fas fa-calendar-check"></i>
+        </a>
+       </div>
+      </div>
+      
+      <div class="hidden lg:block">
+        <h4 class="font-cormorant text-lg font-bold text-[#4A4A4A] mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Home</a></li>
+          <li><a href="index.html#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Our Services</a></li>
+          <li><a href="about.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">About Us</a></li>
+          <li><a href="gallery.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Gallery</a></li>
+          <li><a href="index.html#team" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Our Team</a></li>
+          <li><a href="contact.html" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="hidden lg:block">
+        <h4 class="font-cormorant text-lg font-bold text-[#4A4A4A] mb-4">Popular Services</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Gel Nail Overlays & Extensions</a></li>
+          <li><a href="index.html#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Nail Art & French Designs</a></li>
+          <li><a href="index.html#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Eyelash Extensions</a></li>
+          <li><a href="index.html#services" class="text-gray-600 hover:text-[#FFB6C1] transition-colors">Eyebrow Wax & Lamination</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-cormorant text-lg font-bold text-[#4A4A4A] mb-4">Contact Info</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-2 text-gray-600">
+            <i class="fas fa-map-marker-alt text-[#FFB6C1] mt-1"></i>
+            <span>11 Havelock Road, Willow Park Manor, Pretoria</span>
+          </li>
+          <li class="flex items-start gap-2 text-gray-600">
+            <i class="fas fa-phone-alt text-[#FFB6C1] mt-1"></i>
+            <a href="tel:0671411995" class="hover:text-[#FFB6C1] transition-colors">067 141 1995</a>
+          </li>
+          <li class="flex items-start gap-2 text-gray-600">
+            <i class="fas fa-envelope text-[#FFB6C1] mt-1"></i>
+            <a href="mailto:booking@12twelvesalon.co.za" class="hover:text-[#FFB6C1] transition-colors">booking@12twelvesalon.co.za</a>
+          </li>
+          <li class="flex items-start gap-2 text-gray-600">
+            <i class="fas fa-clock text-[#FFB6C1] mt-1"></i>
+            <div>
+              <div>Mon - Sun: 09:00 - 18:00</div>
+              <div>Holidays: Hours vary</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+     </div>
+     <div class="border-t border-[#FFB6C1]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">© 2024 12TWELVE PTY (LTD). All rights reserved.</p>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <span>Web Design By <a href="https://www.valoyitech.co.za/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FFB6C1] transition-colors font-medium">ValoyItech</a></span>
+      </div>
+     </div>
+    </div>
+   </footer>
+
+   <!-- WhatsApp Floating Button -->
+   <a href="https://wa.me/27671411995?text=Hi%2012TWELVE%20Gel%20Nails%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" class="whatsapp-float group fixed bottom-6 right-6 z-[60] flex items-center gap-3" aria-label="Chat with us on WhatsApp">
+    <span class="hidden sm:inline-flex items-center rounded-full bg-white/90 backdrop-blur px-4 py-2 text-sm font-semibold text-[#4A4A4A] shadow-lg border border-[#25D366]/30 group-hover:shadow-xl transition">Chat Now</span>
+    <span class="relative inline-flex">
+      <span class="wa-ring absolute inset-0 rounded-full"></span>
+      <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl ring-2 ring-white/70 group-hover:scale-105 transition">
+        <i class="fab fa-whatsapp text-2xl"></i>
+      </span>
+    </span>
+   </a>
+
+   <style>
+    .wa-ring{
+      animation: waPulse 1.6s ease-out infinite;
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+    }
+    @keyframes waPulse{
+      0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+      100% { transform: scale(1.6); opacity: 0; box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    }
+   </style>
+
+  </div>
+
+  <script>
+    // Services Data
+    const services = [
+  // Featured Nails
+  { id: 1, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'featured', description: 'Beautiful plain overlay for your hands' },
+  { id: 2, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'featured', description: 'Gel only application for toes' },
+  { id: 3, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'featured', description: 'Custom nail art on 2 nails' },
+  { id: 4, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'featured', description: 'Professional long nail refill service' },
+  { id: 5, name: 'Soak Off with New Set', duration: '30 mins', price: 'R 70', category: 'featured', description: 'Remove old set and prepare for fresh nails' },
+  { id: 6, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'featured', description: 'Short nail refill service' },
+  
+  // All Nails
+  { id: 20, name: 'French Nails', duration: '25 mins', price: 'R 70', category: 'nails', description: 'Classic French manicure' },
+  { id: 21, name: 'Nail Art (2 nails)', duration: '25 mins', price: 'R 60', category: 'nails', description: 'Custom nail art' },
+  { id: 22, name: 'Full Pedicure', duration: '1 hr 30 mins', price: 'R 500', category: 'nails', description: 'Complete pedicure with callus removal, scrub, paraffin wax, massage & gel' },
+  { id: 23, name: 'Plain Gel Toes', duration: '1 hr', price: 'R 290', category: 'nails', description: 'Gel only application for toes' },
+  { id: 24, name: 'Refill Long', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long nail refill' },
+  { id: 25, name: 'Refill Short', duration: '2 hrs', price: 'R 400', category: 'nails', description: 'Short nail refill service' },
+  { id: 26, name: 'Short Plain Overlay on Hands', duration: '1 hr 50 mins', price: 'R 400', category: 'nails', description: 'Plain overlay for hands' },
+  { id: 27, name: 'Long Plain Gel Overlay on Hands', duration: '2 hrs', price: 'R 450', category: 'nails', description: 'Long gel overlay for elegant hands' }
+];
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const isOpen = menu.classList.contains('translate-x-0');
+      
+      if (isOpen) {
+        menu.classList.remove('translate-x-0');
+        menu.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      } else {
+        menu.classList.remove('translate-x-full');
+        menu.classList.add('translate-x-0');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    // Filter Services
+    function filterServices(category) {
+      // Update tabs
+      document.querySelectorAll('.service-tab').forEach(tab => {
+        tab.classList.remove('active', 'bg-[#FFB6C1]', 'text-white');
+        if (tab.dataset.category === category) {
+          tab.classList.add('active', 'bg-[#FFB6C1]', 'text-white');
+        }
+      });
+
+      // Render services
+      const grid = document.getElementById('booking-services-grid');
+      const filtered = services.filter(s => s.category === category);
+      
+      grid.innerHTML = filtered.map(service => `
+        <div class="service-option bg-white rounded-xl p-4 border-2 border-gray-200" onclick="selectService(${service.id}, '${service.name.replace(/'/g, "\\'")}')" id="service-${service.id}">
+          <div class="flex justify-between items-start mb-2">
+            <h5 class="font-cormorant text-lg font-semibold text-[#4A4A4A]">${service.name}</h5>
+            <span class="text-[#FFB6C1] font-bold">${service.price}</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-2">${service.description}</p>
+          <div class="flex items-center gap-2 text-gray-400 text-xs">
+            <i class="fas fa-clock"></i> ${service.duration}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Select Service
+    function selectService(id, name) {
+      // Remove previous selection
+      document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+      
+      // Add selection to clicked
+      document.getElementById(`service-${id}`).classList.add('selected');
+      
+      // Update hidden inputs
+      document.getElementById('selected-service').value = id;
+      document.getElementById('selected-service-name').value = name;
+    }
+
+    // Select Submit Method
+    function selectSubmitMethod(method) {
+      // Remove previous selection
+      document.querySelectorAll('.submit-method').forEach(el => el.classList.remove('selected'));
+      
+      // Add selection
+      document.getElementById(`method-${method}`).classList.add('selected');
+      document.getElementById('submit-method').value = method;
+      
+      // Update button text
+      const btnText = document.getElementById('submit-text');
+      if (method === 'whatsapp') {
+        btnText.innerHTML = 'Send via WhatsApp';
+      } else {
+        btnText.innerHTML = 'Send via Email';
+      }
+    }
+
+    // Form Submission
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const fullName = document.getElementById('fullName').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const serviceName = document.getElementById('selected-service-name').value;
+      const date = document.getElementById('booking-date').value;
+      const time = document.getElementById('booking-time').value;
+      const requests = document.getElementById('special-requests').value;
+      const method = document.getElementById('submit-method').value;
+
+      // Validation
+      if (!serviceName) {
+        alert('Please select a service');
+        return;
+      }
+      if (!method) {
+        alert('Please choose how you would like to submit your booking (WhatsApp or Email)');
+        return;
+      }
+
+      // Format message
+      const message = `*New Booking Request - 12TWELVE Gel Nails*%0A%0A*Name:* ${fullName}%0A*Phone:* ${phone}%0A*Email:* ${email || 'Not provided'}%0A%0A*Service:* ${serviceName}%0A*Date:* ${date}%0A*Time:* ${time}%0A%0A*Special Requests:* ${requests || 'None'}`;
+
+      if (method === 'whatsapp') {
+        // Open WhatsApp
+        window.open(`https://wa.me/27671411995?text=${message}`, '_blank');
+      } else {
+        // Open Email
+        const subject = `Booking Request - ${fullName} - ${date}`;
+        const body = message.replace(/%0A/g, '\n').replace(/%2A/g, '*');
+        window.location.href = `mailto:booking@12twelvesalon.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+    });
+
+    // Set minimum date to today
+    document.getElementById('booking-date').min = new Date().toISOString().split('T')[0];
+
+    // Initialize
+    filterServices('featured');
+
+    // Scroll Animations
+    function initScrollAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-scale').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollAnimations();
+    });
+  </script>
+ </body>
+</html>
